@@ -1,8 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Amaranth, Paytone_One} from 'next/font/google'
+import Main from './components/Main'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Amaranth({
+  subsets: ['latin'],
+  weight: ['400','700']
+
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}><Main/>{children}</body>
     </html>
   )
 }
